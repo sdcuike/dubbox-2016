@@ -6,7 +6,7 @@
     
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder charset="UTF-8">
-			<pattern>[%X{uuid}]   %d{MM-dd HH:mm:ss.SSS} %-5thread %-5level %logger -	%msg%n</pattern>
+			<pattern> %d{MM-dd HH:mm:ss.SSS} %-5thread %-5level %logger -	%msg%n</pattern>
 		</encoder>
 	</appender>
 	<appender name="defaultAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -16,7 +16,7 @@
 			</FileNamePattern>
 		</rollingPolicy>
 		<encoder>
-			<pattern>[%X{uuid}]   %-16(%d{MM-dd HH:mm:ss}) %-5thread %-5level %logger -%msg%n</pattern>
+			<pattern> %-16(%d{MM-dd HH:mm:ss}) %-5thread %-5level %logger -%msg%n</pattern>
 		</encoder>
 	</appender>
 	
