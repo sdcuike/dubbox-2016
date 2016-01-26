@@ -24,7 +24,6 @@
                     dispatcher="${demoService.dubbo.protocol.dispatcher}"
                     threadpool="${demoService.dubbo.protocol.threadpool}"
                     keepalive="true"
-                    server="netty"
                     threads="${demoService.dubbo.protocol.threads}">
     </dubbo:protocol>
 
