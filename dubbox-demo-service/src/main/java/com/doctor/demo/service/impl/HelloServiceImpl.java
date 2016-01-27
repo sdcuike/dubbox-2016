@@ -12,7 +12,7 @@ public class HelloServiceImpl implements HelloService {
     @Override
     public String hello(String name) {
 
-        return "doctor who";
+        return "welcom to home ," + name;
     }
 
 }
