@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
-    <variable name="APP_LOG_HOME" value="./" />
     <variable name="project_home" value="demoService" />
 
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
@@ -10,9 +8,9 @@
         </encoder>
     </appender>
     <appender name="defaultAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${APP_LOG_HOME}/logs/${project_home}/demoService.xml.log</file>
+        <file>logs/${project_home}/demoService.xml.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${APP_LOG_HOME}/logs/${project_home}/demoService.xml.log.out.%d{yyyy-MM-dd}
+            <FileNamePattern>logs/${project_home}/demoService.xml.log.out.%d{yyyy-MM-dd}
             </FileNamePattern>
         </rollingPolicy>
         <encoder>
