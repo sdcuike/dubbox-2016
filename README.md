@@ -1,5 +1,10 @@
 # dubbox-2016
+——————————————————————————————————————————
 
+
+dubbo的插件集合[https://github.com/dubboclub/dubbo-plus](https://github.com/dubboclub/dubbo-plus)
+
+——————————————————————————————————————————
 
  [http://dangdangdotcom.github.io/dubbox]( http://dangdangdotcom.github.io/dubbox
 )
