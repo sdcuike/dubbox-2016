@@ -4,6 +4,8 @@
 
 dubbo的插件集合[https://github.com/dubboclub/dubbo-plus](https://github.com/dubboclub/dubbo-plus)
 
+dubbo服务管理以及监控系统[https://github.com/dubboclub/dubbokeeper](https://github.com/dubboclub/dubbokeeper)
+
 ——————————————————————————————————————————
 
  [http://dangdangdotcom.github.io/dubbox]( http://dangdangdotcom.github.io/dubbox
