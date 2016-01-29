@@ -7,7 +7,7 @@
 	http://www.springframework.org/schema/mvc 
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <bean  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
         <property name="locations">
             <list>
             </list>
@@ -18,7 +18,7 @@
             <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
                 <property name="locations">
                     <list>
-                        <value>classpath:/demoServiceProp/dubbo.properties</value>
+                        <value>classpath:/demoServiceProp/dubbo-${spring.profiles.active:dev}.properties</value>
                     </list>
                 </property>
             </bean>

@@ -9,7 +9,6 @@ echo deployDir $deployDir
 
 echo dubbo services are starting...
 echo JAVA_HOME:$JAVA_HOME
-echo PATH:$PATH
 
 
 ########### beign服务启动了吗(避免重复启动)
@@ -43,8 +42,8 @@ else
 fi
 
 ######
-
-nohup java  $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS  -classpath  $deployDir/config/*:$deployDir/lib/* com.alibaba.dubbo.container.Main  >& /dev/null   &
+#-Dspring.profiles.active=prod/dev/test
+nohup java -Dspring.profiles.active=prod   $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS  -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main  >& /dev/null   &
 
 
 echo $! > bin/service.pid
