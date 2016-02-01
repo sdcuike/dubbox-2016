@@ -17,9 +17,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.doctor</groupId>
-            <artifactId>dubbox-common</artifactId>
-            <version>${project.version}</version>
+            <groupId>com.github.kristofa</groupId>
+            <artifactId>brave-core</artifactId>
         </dependency>
     </dependencies>
 

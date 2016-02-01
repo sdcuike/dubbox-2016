@@ -19,7 +19,7 @@
 
         <dependency>
             <groupId>com.doctor</groupId>
-            <artifactId>dubbox-common</artifactId>
+            <artifactId>dubbox-demo-common</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
