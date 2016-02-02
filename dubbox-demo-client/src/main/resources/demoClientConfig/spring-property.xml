@@ -18,7 +18,8 @@
             <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
                 <property name="locations">
                     <list>
-                        <value>classpath:/demoClientProp/dubbo.properties</value>
+                        <value>classpath:/demoClientProp/dubbo-${spring.profiles.active:dev}.properties</value>
+                        <value>classpath:/demoClientProp/common.properties</value>
                     </list>
                 </property>
             </bean>
