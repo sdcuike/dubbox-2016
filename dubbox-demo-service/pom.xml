@@ -22,6 +22,11 @@
             <artifactId>dubbox-demo-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.doctor</groupId>
+            <artifactId>dubbx-brave</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -30,6 +35,7 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>META-INF/spring/*</include>
+                    <include>META-INF/*</include>
                 </includes>
             </resource>
         </resources>

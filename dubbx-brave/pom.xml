@@ -20,6 +20,14 @@
             <groupId>com.github.kristofa</groupId>
             <artifactId>brave-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.github.kristofa</groupId>
+            <artifactId>brave-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -19,6 +19,7 @@
                 <property name="locations">
                     <list>
                         <value>classpath:/demoServiceProp/dubbo-${spring.profiles.active:dev}.properties</value>
+                        <value>classpath:/demoServiceProp/common.properties</value>
                     </list>
                 </property>
             </bean>

@@ -25,13 +25,10 @@ JAVA_OPTS=" -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true "
 
 JAVA_DEBUG_OPTS=""
 if [ "$1" = "debug" ]; then
-    JAVA_DEBUG_OPTS=" -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n "
+    JAVA_DEBUG_OPTS=" -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y  "
 fi
 
-JAVA_JMX_OPTS=""
-if [ "$1" = "jmx" ]; then
-    JAVA_JMX_OPTS=" -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false "
-fi
+ 
 
 JAVA_MEM_OPTS=""
 BITS=`java -version 2>&1 | grep -i 64-bit`
@@ -43,7 +40,13 @@ fi
 
 ######
 #-Dspring.profiles.active=prod/dev/test
-nohup java -Dspring.profiles.active=prod   $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS  -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main  >& /dev/null   &
+
+if [ "$1" = "debug" ]; then
+    java -Dspring.profiles.active=prod   $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main   
+    
+else
+    nohup java -Dspring.profiles.active=prod   $JAVA_OPTS $JAVA_MEM_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main  >& /dev/null   &
+fi
 
 
 echo $! > bin/service.pid

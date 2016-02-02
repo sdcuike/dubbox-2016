@@ -7,5 +7,9 @@
     <import resource="classpath:/demoServiceConfig/spring-property.xml" />
     <import resource="classpath:/demoServiceConfig/dubbo-config.xml" />
     <import resource="classpath:/demoServiceConfig/dubbo-provider.xml" />
+    
+    
+    <import resource="classpath:/dubbxBraveConfig/spring-brave.xml" />
+    
 
 </beans>
