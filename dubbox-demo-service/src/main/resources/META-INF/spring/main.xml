@@ -5,6 +5,7 @@
 		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
         
         
+    <import resource="classpath:/dubbxBraveConfig/*.xml" />
     <import resource="classpath:/demoServiceConfig/spring-context.xml" />
     
     
