@@ -44,6 +44,8 @@ public class DubboConsumerRequestAdapter implements ClientRequestAdapter {
 
             if (spanId.getParentSpanId() != null) {
                 rpcContext.setAttachment(BraveHttpHeaders.ParentSpanId.getName(), IdConversion.convertToString(spanId.getParentSpanId()));
+            } else {
+                rpcContext.setAttachment(BraveHttpHeaders.ParentSpanId.getName(), IdConversion.convertToString(spanId.getSpanId()));
             }
         }
     }

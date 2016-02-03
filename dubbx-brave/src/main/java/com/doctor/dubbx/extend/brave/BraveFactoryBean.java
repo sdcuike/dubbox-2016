@@ -3,7 +3,6 @@ package com.doctor.dubbx.extend.brave;
 import org.springframework.beans.factory.FactoryBean;
 
 import com.github.kristofa.brave.Brave;
-import com.github.kristofa.brave.LoggingSpanCollector;
 import com.github.kristofa.brave.Sampler;
 import com.github.kristofa.brave.SpanCollector;
 
