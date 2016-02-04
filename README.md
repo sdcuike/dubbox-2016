@@ -13,7 +13,7 @@ dubbo服务管理以及监控系统[https://github.com/dubboclub/dubbokeeper](ht
  
  
  
-1. 从 [http://gitlab.qc.com/cuikexiang/dubbox/tree/dubbox-2.8.4](http://gitlab.qc.com/cuikexiang/dubbox/tree/dubbox-2.8.4) 下载此版本dubbox。
+1. 从 [https://github.com/dangdangdotcom/dubbox/releases/tag/dubbox-2.8.4](https://github.com/dangdangdotcom/dubbox/releases/tag/dubbox-2.8.4) 下载此版本dubbox。
 
 2. 安装dubbox到本地仓库：mvn clean install -Dmaven.test.skip=true
  
