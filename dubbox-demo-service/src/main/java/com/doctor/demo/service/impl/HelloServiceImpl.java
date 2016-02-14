@@ -1,5 +1,7 @@
 package com.doctor.demo.service.impl;
 
+import com.doctor.demo.common.dto.WelcomeResponseDto;
+import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.service.HelloService;
 
 /**
@@ -10,9 +12,10 @@ import com.doctor.demo.service.HelloService;
 public class HelloServiceImpl implements HelloService {
 
     @Override
-    public String hello(String name) {
-
-        return "welcom to home ," + name;
+    public WelcomeResponseDto hello(WelcomeDto welcomDto) {
+        WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
+        welcomeResponseDto.setContent("welcome to dubbo," + welcomDto.toString());
+        return welcomeResponseDto;
     }
 
 }

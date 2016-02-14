@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.doctor.demo.common.dto.WelcomeDto;
+import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.service.HelloService;
 
 /**
@@ -24,8 +26,11 @@ public class HelloServiceClientImplTest {
 
     @Test
     public void testHello() {
-        String hello = helloService.hello("dotor");
-        System.err.println(hello);
+        WelcomeDto welcomDto = new WelcomeDto();
+        welcomDto.setAge(10088);
+        welcomDto.setName("doctor who");
+        WelcomeResponseDto welcomeResponseDto = helloService.hello(welcomDto);
+        System.err.println(welcomeResponseDto);
     }
 
 }
