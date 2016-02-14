@@ -26,4 +26,4 @@ dubbo服务管理以及监控系统[https://github.com/dubboclub/dubbokeeper](ht
 7.dubbo-rpc-jsonrpc 例子执行效果：
 
 
-[https://raw.githubusercontent.com/sdcuike/dubbox-2016/master/383C4DE1-6879-4ECD-83F8-AECF160E555C.png](https://raw.githubusercontent.com/sdcuike/dubbox-2016/master/383C4DE1-6879-4ECD-83F8-AECF160E555C.png)
+![https://raw.githubusercontent.com/sdcuike/dubbox-2016/master/383C4DE1-6879-4ECD-83F8-AECF160E555C.png](https://raw.githubusercontent.com/sdcuike/dubbox-2016/master/383C4DE1-6879-4ECD-83F8-AECF160E555C.png)
