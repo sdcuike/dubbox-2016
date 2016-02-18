@@ -1,7 +1,7 @@
 package com.doctor.demo.service.client.impl;
 
-import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.common.dto.WelcomeDto;
+import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.service.HelloService;
 
 /**
@@ -20,6 +20,16 @@ public class HelloServiceClientImpl implements HelloService {
     @Override
     public WelcomeResponseDto hello(WelcomeDto welcomDto) {
         return helloService.hello(welcomDto);
+    }
+
+    @Override
+    public WelcomeResponseDto hello(String name) {
+        return helloService.hello(name);
+    }
+
+    @Override
+    public WelcomeResponseDto hello(String name, int age, WelcomeDto welcomeDto) {
+        return helloService.hello(name, age, welcomeDto);
     }
 
 }

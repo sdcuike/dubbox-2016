@@ -20,6 +20,13 @@ public class HelloServiceClientImpl2Test {
         welcomDto.setName("doctor who");
         WelcomeResponseDto welcomeResponseDto = helloService.hello(welcomDto);
         System.err.println(welcomeResponseDto);
+
+        welcomeResponseDto = helloService.hello("你好");
+        System.err.println(welcomeResponseDto);
+
+        welcomeResponseDto = helloService.hello("rain", 888, welcomDto);
+        System.err.println(welcomeResponseDto);
+
     }
 
 }

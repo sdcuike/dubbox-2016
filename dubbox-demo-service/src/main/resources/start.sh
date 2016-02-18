@@ -42,10 +42,10 @@ fi
 #-Dspring.profiles.active=prod/dev/test
 
 if [ "$1" = "debug" ]; then
-    java -Dspring.profiles.active=prod   $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main   
+    java -Dspring.profiles.active=dev   $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main   
     
 else
-    nohup java -Dspring.profiles.active=prod   $JAVA_OPTS $JAVA_MEM_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main  >& /dev/null   &
+    nohup java -Dspring.profiles.active=dev   $JAVA_OPTS $JAVA_MEM_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main  >& /dev/null   &
 fi
 
 

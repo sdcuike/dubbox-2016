@@ -5,9 +5,6 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <import resource="classpath:/dubbxBraveConfig/*-brave.xml" />
-
-
     <import resource="classpath:/demoClientConfig/spring-property.xml" />
     <import resource="classpath:/demoClientConfig/dubbo-config.xml" />
     <import resource="classpath:/demoClientConfig/dubbo-consumer.xml" />

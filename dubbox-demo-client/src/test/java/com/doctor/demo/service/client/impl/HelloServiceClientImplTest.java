@@ -25,11 +25,26 @@ public class HelloServiceClientImplTest {
     private HelloService helloService;
 
     @Test
-    public void testHello() {
+    public void testHello_para_WelcomeDto() {
         WelcomeDto welcomDto = new WelcomeDto();
         welcomDto.setAge(10088);
         welcomDto.setName("doctor who");
         WelcomeResponseDto welcomeResponseDto = helloService.hello(welcomDto);
+        System.err.println(welcomeResponseDto);
+    }
+
+    @Test
+    public void testHello_para_string() {
+        WelcomeResponseDto welcomeResponseDto = helloService.hello("你好");
+        System.err.println(welcomeResponseDto);
+    }
+
+    @Test
+    public void testHello_para_() {
+        WelcomeDto welcomeDto = new WelcomeDto();
+        welcomeDto.setAge(10088);
+        welcomeDto.setName("doctor who");
+        WelcomeResponseDto welcomeResponseDto = helloService.hello("rain", 888, welcomeDto);
         System.err.println(welcomeResponseDto);
     }
 
