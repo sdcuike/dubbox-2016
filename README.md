@@ -33,9 +33,9 @@ postman执行：
     "id":11,
     "method":"hello",
     "params":[{
-            "name":"exapmpe"
+            "name":"exapmpe",
+            "age":888
         }]
-    
 }
 
 返回
@@ -43,7 +43,7 @@ postman执行：
   "jsonrpc": "2.0",
   "id": 11,
   "result": {
-    "content": "welcome to dubbo,{\"name\":\"exapmpe\",\"age\":12}"
+    "content": "welcome to dubbo,{\"name\":\"exapmpe\",\"age\":888}"
   }
 }
 
