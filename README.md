@@ -16,7 +16,7 @@ dubbo服务管理以及监控系统[https://github.com/dubboclub/dubbokeeper](ht
 
 4.执行dubbox-demo-service-1.0.0-SNAPSHOT／bin下start.sh脚本，启动dubbo服务端(或执行dubbox-demo-service下的test下的com.doctor.demo.service.impl.com.doctor.demo.service.impl)。
 
-5. 找到dubbox-demo-client测试l类com.doctor.demo.service.client.impl.HelloServiceClientImplTest执行。
+5.找到dubbox-demo-client测试l类com.doctor.demo.service.client.impl.HelloServiceClientImplTest执行。
 
 6.dubbo-rpc-jsonrpc 例子执行效果：
 
