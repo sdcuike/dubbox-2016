@@ -14,11 +14,19 @@
     <name>${project.artifactId}</name>
 
     <description> </description>
+    <properties>
+        <dubbx-brave.version>0.0.1-SNAPSHOT</dubbx-brave.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.doctor</groupId>
+            <artifactId>dubbx-brave</artifactId>
+            <version>${dubbx-brave.version}</version>
         </dependency>
     </dependencies>
 
