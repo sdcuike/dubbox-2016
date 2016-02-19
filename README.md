@@ -33,10 +33,7 @@ postman执行：
     "id":11,
     "method":"hello",
     "params":[{
-            "name":"exapmpe",
-            
-
-        
+            "name":"exapmpe"
         }]
     
 }
