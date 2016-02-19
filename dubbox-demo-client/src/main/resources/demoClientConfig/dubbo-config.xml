@@ -34,5 +34,8 @@
                     check="${demoClient.dubbo.consumer.check}"
                     timeout="${demoClient.dubbo.consumer.timeout}"
                     retries="0"/>
+                    
+    <dubbo:monitor  protocol="registry"/>
+     
                  
 </beans>

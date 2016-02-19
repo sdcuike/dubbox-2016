@@ -54,4 +54,6 @@
                     >
     </dubbo:provider>
     
+    <dubbo:monitor  protocol="registry"/>
+    
 </beans>
