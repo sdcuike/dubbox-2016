@@ -22,4 +22,73 @@ dubbo服务管理以及监控系统[https://github.com/dubboclub/dubbokeeper](ht
 
 
 
-![https://raw.githubusercontent.com/sdcuike/dubbox-2016/dubbo-rpc-jsonrpc-demo/383C4DE1-6879-4ECD-83F8-AECF160E555C.png](https://raw.githubusercontent.com/sdcuike/dubbox-2016/dubbo-rpc-jsonrpc-demo/383C4DE1-6879-4ECD-83F8-AECF160E555C.png)
+ 测试地址：http://10.100.8.159:81/com.doctor.demo.service.HelloService (根据实际地址改动ip＋端口）
+ 
+postman执行：
+
+1.方法：public WelcomeResponseDto hello(WelcomeDto welcomDto)测试
+
+{
+    "jsonrpc":"2.0",
+    "id":11,
+    "method":"hello",
+    "params":[{
+            "name":"exapmpe",
+            
+
+        
+        }]
+    
+}
+
+返回
+{
+  "jsonrpc": "2.0",
+  "id": 11,
+  "result": {
+    "content": "welcome to dubbo,{\"name\":\"exapmpe\",\"age\":12}"
+  }
+}
+
+
+
+2.方法public WelcomeResponseDto hello(String name)测试：
+{
+    "jsonrpc":"2.0",
+    "id":11,
+    "method":"hello",
+    "params":["hello me"]
+    
+}
+
+返回：
+{
+  "jsonrpc": "2.0",
+  "id": 11,
+  "result": {
+    "content": "welcome to dubbo,hello me"
+  }
+}
+
+
+
+ 2.方法public WelcomeResponseDto hello(String name, int age, WelcomeDto welcomeDto)测试：
+ {
+    "jsonrpc":"2.0",
+    "id":11,
+    "method":"hello",
+    "params":["hello me","188",{"name":"exapmpe","age":12}]
+    
+}
+
+
+返回：{
+  "jsonrpc": "2.0",
+  "id": 11,
+  "result": {
+    "content": "welcome to dubbo,hello me ,your age :188 {\"name\":\"exapmpe\",\"age\":12}"
+  }
+}
+
+
+
