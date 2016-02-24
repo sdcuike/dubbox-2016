@@ -9,12 +9,12 @@
 
     <description> dubbo client</description>
 
-<!--     <dubbo:application id="demoClientApplication" -->
-<!--                        name="${demoClient.dubbo.application.name}" -->
-<!--                        owner="${demoClient.dubbo.application.owner}" -->
-<!--                        organization="${demoClient.dubbo.application.organization}" -->
-<!--                        logger="slf4j" -->
-<!--                        compiler="javassist"/> -->
+    <dubbo:application id="demoClientApplication"
+                       name="${demoClient.dubbo.application.name}"
+                       owner="${demoClient.dubbo.application.owner}"
+                       organization="${demoClient.dubbo.application.organization}"
+                       logger="slf4j"
+                       compiler="javassist"/>
     
                     
     <dubbo:registry id="demoClientRegistry"
@@ -28,13 +28,14 @@
     </dubbo:registry>
 
     <dubbo:consumer id="demoClientConsumer"
+                    application="demoClientApplication"
                     registry="demoClientRegistry"
                     init="false"
                     check="${demoClient.dubbo.consumer.check}"
                     timeout="${demoClient.dubbo.consumer.timeout}"
                     retries="0"/>
                     
-<!--     <dubbo:monitor  protocol="registry"/> -->
+    <dubbo:monitor  protocol="registry"/>
      
                  
 </beans>

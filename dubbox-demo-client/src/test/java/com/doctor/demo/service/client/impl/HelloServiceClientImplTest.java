@@ -18,7 +18,7 @@ import com.doctor.demo.service.HelloService;
  * @time 2016年1月27日 下午1:52:57
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:/demoClientConfig/spring-context.xml")
+@ContextConfiguration("classpath:/META-INF/spring/main.xml")
 public class HelloServiceClientImplTest {
 
     @Resource(name = "helloServiceClient")

@@ -9,5 +9,4 @@
     <import resource="classpath:/demoServiceConfig/dubbo-provider.xml" />
 
 
-    <import resource="classpath:/dubbxBraveConfig/*-brave.xml" />
 </beans>

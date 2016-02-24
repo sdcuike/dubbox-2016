@@ -5,4 +5,7 @@
 
     <import resource="classpath:/demoClientConfig/spring-context.xml" />
 
+    <import resource="classpath:/dubbxBraveConfig/spring-brave.xml" />
+    <import resource="classpath:/dubbxBraveConfig/spring-brave-helper.xml" />
+
 </beans>
