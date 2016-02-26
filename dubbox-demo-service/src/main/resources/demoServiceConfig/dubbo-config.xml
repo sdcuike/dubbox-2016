@@ -26,6 +26,16 @@
                     server="${demoService.dubbo.protocol.server}"
                     threads="${demoService.dubbo.protocol.threads}">
     </dubbo:protocol>
+    
+    <dubbo:protocol id="restProtocol"
+                    name="${demoRestService.dubbo.protocol.name}"
+                    port="${demoRestService.dubbo.protocol.port}"
+                    dispatcher="${demoRestService.dubbo.protocol.dispatcher}"
+                    threadpool="${demoRestService.dubbo.protocol.threadpool}"
+                    server="${demoRestService.dubbo.protocol.server}"
+                    threads="${demoRestService.dubbo.protocol.threads}">
+    </dubbo:protocol>
+
 
     <dubbo:registry id="demoServiceRegistry"
                     protocol="${demoService.dubbo.registry.name}"
@@ -44,6 +54,19 @@
                     application="demoServiceApplication"
                     registry="demoServiceRegistry"
                     protocol="demoServiceProtocol"
+                    cluster="${demoService.dubbo.provider.cluster}"
+                    loadbalance="${demoService.dubbo.provider.loadbalance}"
+                    serialization="${demoService.dubbo.provider.serialization}"
+                    retries="${demoService.dubbo.provider.retries}"
+                    timeout="${demoService.dubbo.provider.timeout}"
+                    proxy="javassist"
+                    delay="-1"
+                    >
+    </dubbo:provider>
+    <dubbo:provider id="demoServiceRestProvider"
+                    application="demoServiceApplication"
+                    registry="demoServiceRegistry"
+                    protocol="restProtocol"
                     cluster="${demoService.dubbo.provider.cluster}"
                     loadbalance="${demoService.dubbo.provider.loadbalance}"
                     serialization="${demoService.dubbo.provider.serialization}"

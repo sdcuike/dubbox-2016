@@ -1,5 +1,7 @@
 package com.doctor.demo.service.client.impl;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -40,12 +42,13 @@ public class HelloServiceClientImplTest {
     }
 
     @Test
-    public void testHello_para_() {
+    public void testHello_para_() throws InterruptedException {
         WelcomeDto welcomeDto = new WelcomeDto();
         welcomeDto.setAge(10088);
         welcomeDto.setName("doctor who");
         WelcomeResponseDto welcomeResponseDto = helloService.hello("rain", 888, welcomeDto);
         System.err.println(welcomeResponseDto);
+        TimeUnit.SECONDS.sleep(100);
     }
 
 }
