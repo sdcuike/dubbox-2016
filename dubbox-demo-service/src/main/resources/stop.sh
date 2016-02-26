@@ -1,12 +1,15 @@
-currentDir=$(pwd)
-echo currentDir $currentDir
+#!/bin/bash
 
-cd ..
-deployDir=$(pwd)
+deployDir=$(cd "$(dirname "$0")"; cd ..; pwd)
 echo deployDir $deployDir
 
-echo dubbo services are stoping...
+echo dubbo services are starting...
 echo JAVA_HOME:$JAVA_HOME
+
+cd $deployDir
+
+
+
 
 kill $(cat bin/service.pid )  
 

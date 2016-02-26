@@ -1,15 +1,12 @@
 #!/bin/bash
 
-currentDir=$(pwd)
-echo currentDir $currentDir
-
-cd ..
-deployDir=$(pwd)
+deployDir=$(cd "$(dirname "$0")"; cd ..; pwd)
 echo deployDir $deployDir
 
 echo dubbo services are starting...
 echo JAVA_HOME:$JAVA_HOME
 
+cd $deployDir
 
 ########### beign服务启动了吗(避免重复启动)
 PIDS=$( ps -f | grep java | grep "$deployDir" |awk '{print $2}' )
