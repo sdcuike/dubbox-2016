@@ -16,6 +16,7 @@
         <module>dubbox-demo-common</module>
         <module>dubbox-demo-service</module>
         <module>dubbox-demo-client</module>
+        <module>dubbox-demo-web</module>
     </modules>
 
     <properties>

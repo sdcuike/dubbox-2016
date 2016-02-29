@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <description> dubbo client</description>
+
+    <dubbo:application id="demoClientApplication"
+                       name="${demoClient.dubbo.application.name}"
+                       owner="${demoClient.dubbo.application.owner}"
+                       organization="${demoClient.dubbo.application.organization}"
+                       logger="slf4j"
+                       compiler="javassist"/>
+    
+                    
+<!--     <dubbo:registry id="demoClientRegistry" -->
+<!--                     protocol="${demoClient.dubbo.registry.name}" -->
+<!--                     client="${demoClient.dubbo.registry.client}" -->
+<!--                     address="${demoClient.dubbo.registry.address}" -->
+<!--                     group="${demoClient.dubbo.registry.group}" -->
+<!--                     check="${demoClient.dubbo.consumer.check}" -->
+<!--                     subscribe="true" -->
+<!--                     file="demoClient-registry-cache.properties"> -->
+<!--     </dubbo:registry> -->
+
+<!--     <dubbo:consumer id="demoClientConsumer" -->
+<!--                     application="demoClientApplication" -->
+<!--                     registry="demoClientRegistry" -->
+<!--                     init="false" -->
+<!--                     check="${demoClient.dubbo.consumer.check}" -->
+<!--                     timeout="${demoClient.dubbo.consumer.timeout}" -->
+<!--                     retries="0"/> -->
+                    
+<!--     <dubbo:monitor  protocol="registry"/> -->
+     
+                 
+</beans>
