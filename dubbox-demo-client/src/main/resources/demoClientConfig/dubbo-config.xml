@@ -34,7 +34,7 @@
                     timeout="${demoClient.dubbo.consumer.timeout}"
                     retries="0"/>
                     
-<!--     <dubbo:monitor  protocol="registry"/> -->
+    <dubbo:monitor  protocol="registry"/>
      
                  
 </beans>
