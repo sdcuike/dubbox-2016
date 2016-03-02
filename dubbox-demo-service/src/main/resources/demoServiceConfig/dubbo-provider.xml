@@ -5,6 +5,7 @@
 		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
+    <dubbo:service interface="com.doctor.demo.service.HelloService" ref="helloService" provider="demoServiceRestProvider"/>
     <dubbo:service interface="com.doctor.demo.service.HelloService" ref="helloService" provider="demoServiceProvider"/>
     <dubbo:service interface="com.doctor.demo.service.HelloRestService" ref="helloRestServiceImpl" provider="demoServiceRestProvider" />
     <dubbo:service interface="com.doctor.demo.service.HelloRestService" ref="helloRestServiceImpl" provider="demoServiceProvider" />
