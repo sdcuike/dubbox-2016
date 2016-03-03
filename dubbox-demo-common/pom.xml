@@ -30,5 +30,36 @@
         </dependency>
     </dependencies>
 
-
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <docencoding>UTF-8</docencoding>
+                    <failOnError>false</failOnError>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>jaxb</id>
+                        <configuration>
+                        
+                            <doclet>com.iggroup.oss.restdoclet.doclet.XmlDoclet</doclet>
+                            <docletArtifacts>
+                                <docletArtifact>
+                                    <groupId>com.iggroup.oss.restdoclet</groupId>
+                                    <artifactId>restdoclet-plugin</artifactId>
+                                    <version>2.3.0-SNAPSHOT</version>
+                                </docletArtifact>
+                            </docletArtifacts>
+                        </configuration>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
