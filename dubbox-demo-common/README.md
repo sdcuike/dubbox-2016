@@ -66,4 +66,5 @@
  
  7.截图（rest.png)
  
+ !(https://raw.githubusercontent.com/sdcuike/dubbox-2016/dubbo-brave-demo-test/dubbox-demo-common/rest.png)[https://raw.githubusercontent.com/sdcuike/dubbox-2016/dubbo-brave-demo-test/dubbox-demo-common/rest.png]
  
