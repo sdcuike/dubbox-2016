@@ -14,6 +14,7 @@ import com.doctor.demo.common.dto.WelcomeResponseDto;
  *
  * @time 2016年1月25日 下午11:07:44
  */
+
 @Path("hs")
 public interface HelloService {
     /**

@@ -1,0 +1,75 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is a sample for swagger-maven-plugin",
+    "version" : "v1",
+    "title" : "Swagger Maven Plugin Sample",
+    "termsOfService" : "http://www.github.com/kongchen/swagger-maven-plugin",
+    "contact" : {
+      "name" : "Kong Chen",
+      "url" : "http://kongch.com",
+      "email" : "kongchen@gmail.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "localhost:8888",
+  "basePath" : "/api",
+  "tags" : [ {
+    "name" : "hello service"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/hello/w" : {
+      "post" : {
+        "tags" : [ "hello service" ],
+        "summary" : "test hello method",
+        "description" : "note",
+        "operationId" : "hello",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "welcomDto object",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/WelcomeDto"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WelcomeResponseDto"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "WelcomeDto" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "age" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "WelcomeResponseDto" : {
+      "type" : "object",
+      "properties" : {
+        "content" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

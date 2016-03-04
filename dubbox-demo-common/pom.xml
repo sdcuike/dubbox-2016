@@ -16,6 +16,7 @@
     <description> </description>
     <properties>
         <dubb-brave.version>0.0.1-SNAPSHOT</dubb-brave.version>
+        <swagger.version>1.5.7</swagger.version>
     </properties>
 
     <dependencies>
@@ -28,9 +29,20 @@
             <artifactId>dubb-brave</artifactId>
             <version>${dubb-brave.version}</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jaxrs</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-core</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
 
-    <reporting>
+
+    </dependencies>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -40,26 +52,97 @@
                     <docencoding>UTF-8</docencoding>
                     <failOnError>false</failOnError>
                 </configuration>
-                <reportSets>
-                    <reportSet>
-                        <id>jaxb</id>
+            </plugin>
+            <!-- <plugin> -->
+            <!-- <groupId>com.webcohesion.enunciate</groupId> -->
+            <!-- <artifactId>enunciate-maven-plugin</artifactId> -->
+            <!-- <version>2.2.0</version> -->
+            <!-- <executions> -->
+            <!-- <execution> -->
+            <!-- <goals> -->
+            <!-- <goal>docs</goal> -->
+            <!-- </goals> -->
+            <!-- <configuration> -->
+            <!-- <docsDir>${project.build.directory}/docs</docsDir> -->
+            <!-- <configFile>enunciate.xml</configFile> -->
+            <!-- </configuration> -->
+            <!-- </execution> -->
+            <!-- </executions> -->
+            <!-- </plugin> -->
+
+
+            <plugin>
+                <groupId>com.github.kongchen</groupId>
+                <artifactId>swagger-maven-plugin</artifactId>
+                <configuration>
+                    <apiSources>
+                        <apiSource>
+                            <springmvc>false</springmvc>
+                            <locations>com.doctor.demo</locations>
+                            <schemes>http,https</schemes>
+                            <host>petstore.swagger.wordnik.com</host>
+                            <basePath>/api</basePath>
+                            <info>
+                                <title>Swagger Maven Plugin Sample</title>
+                                <version>v1</version>
+                                <description>This is a sample for swagger-maven-plugin</description>
+                                <termsOfService>
+                                    http://www.github.com/kongchen/swagger-maven-plugin
+                                </termsOfService>
+                                <contact>
+                                    <email>kongchen@gmail.com</email>
+                                    <name>Kong Chen</name>
+                                    <url>http://kongch.com</url>
+                                </contact>
+                                <license>
+                                    <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+                                    <name>Apache 2.0</name>
+                                </license>
+                            </info>
+                            Support classpath or file absolute path here. 1) classpath e.g: "classpath:/markdown.hbs", "classpath:/templates/hello.html" 2) file e.g: "${basedir}/src/main/resources/markdown.hbs", "${basedir}/src/main/resources/template/hello.html"
+                            <templatePath>${basedir}/templates/strapdown.html.hbs</templatePath>
+                            <outputPath>${basedir}/generated/document.html</outputPath>
+                            <swaggerDirectory>generated/swagger-ui</swaggerDirectory>
+                        </apiSource>
+                    </apiSources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.sebastian-daschner</groupId>
+                <artifactId>jaxrs-analyzer-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>analyze-jaxrs</goal>
+                        </goals>
                         <configuration>
-                        
-                            <doclet>com.iggroup.oss.restdoclet.doclet.XmlDoclet</doclet>
-                            <docletArtifacts>
-                                <docletArtifact>
-                                    <groupId>com.iggroup.oss.restdoclet</groupId>
-                                    <artifactId>restdoclet-plugin</artifactId>
-                                    <version>2.3.0-SNAPSHOT</version>
-                                </docletArtifact>
-                            </docletArtifacts>
+                            <!-- Available backends are plaintext (default), swagger and asciidoc -->
+                            <backend>swagger</backend>
+                            <!-- Domain of the deployed project, defaults to example.com -->
+                            <deployedDomain>example.com</deployedDomain>
                         </configuration>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
-    </reporting>
+    </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>com.github.kongchen</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
