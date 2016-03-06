@@ -1,7 +1,9 @@
- ### swagger-maven-plugin 使用
- pom 添加插件：
+## swagger-maven-plugin 使用
+### pom 添加插件：
  
- <plugin>
+ 
+
+    <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
                 <configuration>
@@ -45,12 +47,11 @@
                     </execution>
                 </executions>
             </plugin>
-            
-            
-            
-            
-            
-用到到模版见目录。
+
+
+ 
+ 
+## 用到到模版见目录。
 
  1.在该项目下执行mvn clean compile，得到generated/swagger-ui/swagger.json.
  
