@@ -1,5 +1,7 @@
 package com.doctor.demo.service.client.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Resource;
@@ -49,6 +51,20 @@ public class HelloServiceClientImplTest {
         WelcomeResponseDto welcomeResponseDto = helloService.hello("rain", 888, welcomeDto);
         System.err.println(welcomeResponseDto);
         TimeUnit.SECONDS.sleep(100);
+    }
+
+    @Test
+    public void test_test() {
+        List<WelcomeDto> welcomeDtos = new ArrayList<>();
+
+        for (int i = 0; i < 4; i++) {
+            WelcomeDto welcomeDto = new WelcomeDto();
+            welcomeDto.setAge(i);
+            welcomeDto.setName("doctor who " + i);
+            welcomeDtos.add(welcomeDto);
+        }
+        List<WelcomeResponseDto> list = helloService.test(welcomeDtos);
+        System.err.println(list);
     }
 
 }

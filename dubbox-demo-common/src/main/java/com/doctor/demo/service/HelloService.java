@@ -1,5 +1,7 @@
 package com.doctor.demo.service;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -37,4 +39,6 @@ public interface HelloService {
     WelcomeResponseDto hello(String name);
 
     WelcomeResponseDto hello(String name, int age, WelcomeDto welcomeDto);
+
+    List<WelcomeResponseDto> test(List<WelcomeDto> welcomeDtos);
 }

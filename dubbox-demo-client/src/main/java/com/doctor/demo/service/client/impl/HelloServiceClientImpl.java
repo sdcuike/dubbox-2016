@@ -1,5 +1,7 @@
 package com.doctor.demo.service.client.impl;
 
+import java.util.List;
+
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.service.HelloService;
@@ -30,6 +32,11 @@ public class HelloServiceClientImpl implements HelloService {
     @Override
     public WelcomeResponseDto hello(String name, int age, WelcomeDto welcomeDto) {
         return helloService.hello(name, age, welcomeDto);
+    }
+
+    @Override
+    public List<WelcomeResponseDto> test(List<WelcomeDto> welcomeDtos) {
+        return helloService.test(welcomeDtos);
     }
 
 }

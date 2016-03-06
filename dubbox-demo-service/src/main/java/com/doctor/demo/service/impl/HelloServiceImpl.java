@@ -1,5 +1,8 @@
 package com.doctor.demo.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.service.HelloService;
@@ -33,6 +36,19 @@ public class HelloServiceImpl implements HelloService {
         WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
         welcomeResponseDto.setContent("welcome to dubbo," + name + " ,your age :" + age + " " + welcomeDto);
         return welcomeResponseDto;
+    }
+
+    @Override
+    public List<WelcomeResponseDto> test(List<WelcomeDto> welcomeDtos) {
+        List<WelcomeResponseDto> list = new ArrayList<>();
+        System.out.println(welcomeDtos);
+
+        for (WelcomeDto welcomeDto : welcomeDtos) {
+            WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
+            welcomeResponseDto.setContent("welcome to dubbo," + welcomeDto.getName() + " ,your age :" + welcomeDto.getAge() + " ==");
+            list.add(welcomeResponseDto);
+        }
+        return list;
     }
 
 }
