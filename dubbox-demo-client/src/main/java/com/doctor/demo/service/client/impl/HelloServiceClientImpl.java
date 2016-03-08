@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
+import com.doctor.demo.common.model.ModelResult;
 import com.doctor.demo.service.HelloService;
 
 /**
@@ -37,6 +38,11 @@ public class HelloServiceClientImpl implements HelloService {
     @Override
     public List<WelcomeResponseDto> test(List<WelcomeDto> welcomeDtos) {
         return helloService.test(welcomeDtos);
+    }
+
+    @Override
+    public ModelResult<WelcomeResponseDto> test_ModelResult(WelcomeDto welcomeDto) {
+        return helloService.test_ModelResult(welcomeDto);
     }
 
 }

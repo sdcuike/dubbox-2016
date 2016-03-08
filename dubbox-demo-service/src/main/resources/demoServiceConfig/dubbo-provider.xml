@@ -9,7 +9,6 @@
     <dubbo:service interface="com.doctor.demo.service.HelloService" ref="helloService" provider="demoServiceProvider"/>
     <dubbo:service interface="com.doctor.demo.service.HelloRestService" ref="helloRestServiceImpl" provider="demoServiceRestProvider" />
     <dubbo:service interface="com.doctor.demo.service.HelloRestService" ref="helloRestServiceImpl" provider="demoServiceProvider" />
-
     <bean id="helloService" class="com.doctor.demo.service.impl.HelloServiceImpl" />
     <bean id="helloRestServiceImpl" class="com.doctor.demo.service.impl.HelloRestServiceImpl" />
 </beans>
