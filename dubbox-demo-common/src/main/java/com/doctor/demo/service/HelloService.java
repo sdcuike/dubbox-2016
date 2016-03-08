@@ -1,11 +1,14 @@
 package com.doctor.demo.service;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.doctor.demo.common.domain.WorkflowSetting;
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
 
@@ -38,4 +41,8 @@ public interface HelloService {
     WelcomeResponseDto hello(String name);
 
     WelcomeResponseDto hello(String name, int age, WelcomeDto welcomeDto);
+
+    List<WelcomeResponseDto> test_list(String name, int age, List<WelcomeDto> welcomeDtos);
+
+    public Boolean createWorkflowSetting(List<WorkflowSetting> userList);
 }

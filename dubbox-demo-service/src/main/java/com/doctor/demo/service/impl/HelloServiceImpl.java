@@ -1,5 +1,9 @@
 package com.doctor.demo.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.doctor.demo.common.domain.WorkflowSetting;
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.service.HelloService;
@@ -33,6 +37,27 @@ public class HelloServiceImpl implements HelloService {
         WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
         welcomeResponseDto.setContent("welcome to dubbo," + name + " ,your age :" + age + " " + welcomeDto);
         return welcomeResponseDto;
+    }
+
+    @Override
+    public List<WelcomeResponseDto> test_list(String name, int age, List<WelcomeDto> welcomeDtos) {
+        List<WelcomeResponseDto> welcomeResponseDtos = new ArrayList<>();
+
+        for (WelcomeDto welcomeDto : welcomeDtos) {
+            WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
+            welcomeResponseDto.setContent(welcomeDto.getName() + " " + welcomeDto.getAge());
+            welcomeResponseDtos.add(welcomeResponseDto);
+        }
+        return welcomeResponseDtos;
+    }
+
+    @Override
+    public Boolean createWorkflowSetting(List<WorkflowSetting> userList) {
+        for (WorkflowSetting workflowSetting : userList) {
+            workflowSetting.getId();
+            // TODO:
+        }
+        return null;
     }
 
 }

@@ -1,5 +1,7 @@
 package com.doctor.demo.service.client.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Resource;
@@ -9,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.doctor.demo.common.domain.WorkflowSetting;
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.service.HelloService;
@@ -51,4 +54,33 @@ public class HelloServiceClientImplTest {
         TimeUnit.SECONDS.sleep(100);
     }
 
+    @Test
+    public void test_list() {
+        List<WelcomeDto> welcomeDtos = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            WelcomeDto welcomeDto = new WelcomeDto();
+            welcomeDto.setName("doctor who " + i);
+            welcomeDto.setAge(i + 1888);
+            welcomeDtos.add(welcomeDto);
+        }
+        List<WelcomeResponseDto> test_list = helloService.test_list("doctor who", 888, welcomeDtos);
+
+        System.out.println(test_list);
+    }
+
+    @Test
+    public void test_createWorkflowSetting() {
+        List<WorkflowSetting> list = new ArrayList<WorkflowSetting>();
+        for (int i = 0; i < 5; i++) {
+            WorkflowSetting oo = new WorkflowSetting();
+            oo.setItemId(i + 1L);
+            oo.setItemType(1);
+            oo.setEnable(1);
+            oo.setNode(i + 1);
+            oo.setSort(i + 1);
+            list.add(oo);
+        }
+        Boolean result = helloService.createWorkflowSetting(list);
+        System.out.println(result);
+    }
 }

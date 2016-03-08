@@ -53,23 +53,6 @@
                     <failOnError>false</failOnError>
                 </configuration>
             </plugin>
-            <!-- <plugin> -->
-            <!-- <groupId>com.webcohesion.enunciate</groupId> -->
-            <!-- <artifactId>enunciate-maven-plugin</artifactId> -->
-            <!-- <version>2.2.0</version> -->
-            <!-- <executions> -->
-            <!-- <execution> -->
-            <!-- <goals> -->
-            <!-- <goal>docs</goal> -->
-            <!-- </goals> -->
-            <!-- <configuration> -->
-            <!-- <docsDir>${project.build.directory}/docs</docsDir> -->
-            <!-- <configFile>enunciate.xml</configFile> -->
-            <!-- </configuration> -->
-            <!-- </execution> -->
-            <!-- </executions> -->
-            <!-- </plugin> -->
-
 
             <plugin>
                 <groupId>com.github.kongchen</groupId>
@@ -99,10 +82,10 @@
                                     <name>Apache 2.0</name>
                                 </license>
                             </info>
-                            Support classpath or file absolute path here. 1) classpath e.g: "classpath:/markdown.hbs", "classpath:/templates/hello.html" 2) file e.g: "${basedir}/src/main/resources/markdown.hbs", "${basedir}/src/main/resources/template/hello.html"
+                            <!-- Support classpath or file absolute path here. 1) classpath e.g: "classpath:/markdown.hbs", "classpath:/templates/hello.html" 2) file e.g: "${basedir}/src/main/resources/markdown.hbs", "${basedir}/src/main/resources/template/hello.html" -->
                             <templatePath>${basedir}/templates/strapdown.html.hbs</templatePath>
-                            <outputPath>${basedir}/generated/document.html</outputPath>
-                            <swaggerDirectory>generated/swagger-ui</swaggerDirectory>
+                            <outputPath>${project.build.directory}/generated-swagger/document.html</outputPath>
+                            <swaggerDirectory>${project.build.directory}/generated-swagger/swagger-ui</swaggerDirectory>
                         </apiSource>
                     </apiSources>
                 </configuration>
@@ -115,34 +98,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.sebastian-daschner</groupId>
-                <artifactId>jaxrs-analyzer-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>analyze-jaxrs</goal>
-                        </goals>
-                        <configuration>
-                            <!-- Available backends are plaintext (default), swagger and asciidoc -->
-                            <backend>swagger</backend>
-                            <!-- Domain of the deployed project, defaults to example.com -->
-                            <deployedDomain>example.com</deployedDomain>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>com.github.kongchen</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 </project>

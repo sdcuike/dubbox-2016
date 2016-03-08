@@ -21,6 +21,8 @@ import io.swagger.annotations.ApiResponse;
  */
 @Api(value = "hello", tags = "hello service")
 @Path("hello")
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
 public interface HelloRestService {
     /**
      * 老接口方式（DTO)
@@ -28,13 +30,10 @@ public interface HelloRestService {
      * @param welcomDto
      * @return
      */
-    @ApiOperation(value = "test hello method", notes = "note")
-
+    @ApiOperation(value = "test hello method", notes = "note test swagger")
+    @ApiResponse(message = "ok", code = 200)
     @POST
     @Path("w")
-    @Consumes({ MediaType.APPLICATION_JSON })
-    @Produces({ MediaType.APPLICATION_JSON })
-    @ApiResponse(message = "ok", code = 200)
     WelcomeResponseDto hello(@ApiParam(value = "welcomDto object", required = true) WelcomeDto welcomDto);
 
 }
