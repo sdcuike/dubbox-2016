@@ -10,6 +10,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
+import com.doctor.demo.common.model.ModelResult;
 
 /**
  * @author sdcuike
@@ -40,6 +41,8 @@ public interface HelloService {
     WelcomeResponseDto hello(String name);
 
     WelcomeResponseDto hello(String name, int age, WelcomeDto welcomeDto);
+
+    ModelResult<WelcomeResponseDto> test_ModelResult(WelcomeDto welcomeDto);
 
     List<WelcomeResponseDto> test(List<WelcomeDto> welcomeDtos);
 }

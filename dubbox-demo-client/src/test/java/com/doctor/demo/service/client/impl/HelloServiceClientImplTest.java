@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
+import com.doctor.demo.common.model.ModelResult;
 import com.doctor.demo.service.HelloService;
 
 /**
@@ -65,6 +66,16 @@ public class HelloServiceClientImplTest {
         }
         List<WelcomeResponseDto> list = helloService.test(welcomeDtos);
         System.err.println(list);
+    }
+
+    @Test
+    public void test_ModelResult() {
+        WelcomeDto welcomeDto = new WelcomeDto();
+        welcomeDto.setAge(10088);
+        welcomeDto.setName("doctor who");
+        ModelResult<WelcomeResponseDto> modelResult = helloService.test_ModelResult(welcomeDto);
+
+        System.out.println(modelResult);
     }
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
+import com.doctor.demo.common.model.ModelResult;
 import com.doctor.demo.service.HelloService;
 
 /**
@@ -39,16 +40,24 @@ public class HelloServiceImpl implements HelloService {
     }
 
     @Override
+    public ModelResult<WelcomeResponseDto> test_ModelResult(WelcomeDto welcomeDto) {
+        WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
+        welcomeResponseDto.setContent("welcome to dubbo," + welcomeDto.getName() + " ,your age :" + welcomeDto.getAge() + " " + welcomeDto);
+        ModelResult<WelcomeResponseDto> modelResult = new ModelResult<>();
+        modelResult.setData(welcomeResponseDto);
+        return modelResult;
+    }
+
+    @Override
     public List<WelcomeResponseDto> test(List<WelcomeDto> welcomeDtos) {
-        List<WelcomeResponseDto> list = new ArrayList<>();
-        System.out.println(welcomeDtos);
+        List<WelcomeResponseDto> welcomeResponseDtos = new ArrayList<>();
 
         for (WelcomeDto welcomeDto : welcomeDtos) {
             WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
-            welcomeResponseDto.setContent("welcome to dubbo," + welcomeDto.getName() + " ,your age :" + welcomeDto.getAge() + " ==");
-            list.add(welcomeResponseDto);
+            welcomeResponseDto.setContent(welcomeDto.getName() + " " + welcomeDto.getAge());
+            welcomeResponseDtos.add(welcomeResponseDto);
         }
-        return list;
+        return welcomeResponseDtos;
     }
 
 }

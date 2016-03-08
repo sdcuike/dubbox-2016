@@ -34,23 +34,27 @@
             <groupId>io.swagger</groupId>
             <artifactId>swagger-jaxrs</artifactId>
             <version>${swagger.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-core</artifactId>
             <version>${swagger.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.webcohesion.enunciate</groupId>
             <artifactId>enunciate-core</artifactId>
             <version>${enunciate.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.webcohesion.enunciate</groupId>
             <artifactId>enunciate-core-annotations</artifactId>
             <version>${enunciate.version}</version>
+            <optional>true</optional>
         </dependency>
-        
+
     </dependencies>
     <build>
         <plugins>
