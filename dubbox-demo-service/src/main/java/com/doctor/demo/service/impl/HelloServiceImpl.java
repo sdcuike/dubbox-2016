@@ -3,7 +3,6 @@ package com.doctor.demo.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.doctor.demo.common.domain.WorkflowSetting;
 import com.doctor.demo.common.dto.WelcomeDto;
 import com.doctor.demo.common.dto.WelcomeResponseDto;
 import com.doctor.demo.service.HelloService;
@@ -49,15 +48,6 @@ public class HelloServiceImpl implements HelloService {
             welcomeResponseDtos.add(welcomeResponseDto);
         }
         return welcomeResponseDtos;
-    }
-
-    @Override
-    public Boolean createWorkflowSetting(List<WorkflowSetting> userList) {
-        for (WorkflowSetting workflowSetting : userList) {
-            workflowSetting.getId();
-            // TODO:
-        }
-        return null;
     }
 
 }
