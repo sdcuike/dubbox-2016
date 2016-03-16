@@ -30,9 +30,9 @@ fi
 JAVA_MEM_OPTS=""
 BITS=`java -version 2>&1 | grep -i 64-bit`
 if [ -n "$BITS" ]; then
-    JAVA_MEM_OPTS=" -server -Xmx2g -Xms2g -Xmn256m   -Xss256k -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled   -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 "
+    JAVA_MEM_OPTS=" -server -Xmx512m -Xms512m -Xmn256m   -Xss256k -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled   -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 "
 else
-    JAVA_MEM_OPTS=" -server -Xms1g -Xmx1g   -XX:SurvivorRatio=2 -XX:+UseParallelGC "
+    JAVA_MEM_OPTS=" -server -Xms256m -Xmx256m   -XX:SurvivorRatio=2 -XX:+UseParallelGC "
 fi
 
 ######
@@ -42,7 +42,7 @@ if [ "$1" = "debug" ]; then
     java -Dspring.profiles.active=dev   $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main   
     
 else
-    nohup java -Dspring.profiles.active=dev   $JAVA_OPTS $JAVA_MEM_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main  >& /dev/null   &
+    nohup java -Dspring.profiles.active=dev   $JAVA_OPTS $JAVA_MEM_OPTS    -classpath  $deployDir/config:$deployDir/lib/* com.alibaba.dubbo.container.Main > stdout.log 2>&1  &
 fi
 
 
