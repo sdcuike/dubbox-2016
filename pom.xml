@@ -238,27 +238,13 @@
         <!-- 如果要使用json序列化 -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jackson-provider</artifactId>
-
+            <artifactId>resteasy-jackson2-provider</artifactId>
         </dependency>
         <!-- 如果要使用netty server -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-netty</artifactId>
-
         </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.3.3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.3.3</version>
-        </dependency>
-        <!-- -->
 
         <dependency>
             <groupId>org.javassist</groupId>
@@ -506,5 +492,5 @@
             <url>http://nexus.qmino.com/content/repositories/miredot</url>
         </pluginRepository>
     </pluginRepositories>
-    
+
 </project>
