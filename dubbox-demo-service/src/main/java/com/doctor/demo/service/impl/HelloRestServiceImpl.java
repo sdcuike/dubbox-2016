@@ -24,6 +24,7 @@ public class HelloRestServiceImpl implements HelloRestService {
     public ModelResult<WelcomeResponseDto> test_ModelResult(WelcomeDto welcomeDto) {
         WelcomeResponseDto welcomeResponseDto = new WelcomeResponseDto();
         welcomeResponseDto.setContent("welcome to dubbo," + welcomeDto.getName() + " ,your age :" + welcomeDto.getAge() + " " + welcomeDto);
+        welcomeResponseDto.setFullName("which doctor");
         ModelResult<WelcomeResponseDto> modelResult = new ModelResult<>();
         modelResult.setData(welcomeResponseDto);
         return modelResult;
