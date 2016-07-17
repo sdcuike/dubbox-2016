@@ -30,6 +30,7 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>META-INF/spring/*</include>
+                    <include>META-INF/dubbo/*</include>
                     <include>META-INF/*</include>
                 </includes>
             </resource>

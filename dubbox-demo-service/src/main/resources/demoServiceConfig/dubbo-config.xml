@@ -20,7 +20,7 @@
 
     <dubbo:protocol id="demoServiceProtocol"
                     name="${demoService.dubbo.protocol.name}"
-                    port="-1"
+                    port="${demoService.dubbo.protocol.port}"
                     dispatcher="${demoService.dubbo.protocol.dispatcher}"
                     threadpool="${demoService.dubbo.protocol.threadpool}"
                     server="${demoService.dubbo.protocol.server}"
@@ -54,6 +54,6 @@
                     >
     </dubbo:provider>
     
-    <dubbo:monitor  protocol="registry"/>
+  <!--   <dubbo:monitor  protocol="registry"/> -->
     
 </beans>

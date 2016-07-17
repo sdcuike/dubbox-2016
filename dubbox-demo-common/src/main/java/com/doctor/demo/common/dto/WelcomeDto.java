@@ -13,6 +13,7 @@ public class WelcomeDto implements Serializable {
     private static final long serialVersionUID = 5888239832930244489L;
     private String name;
     private int age;
+    private Long sleepTime;
 
     public void setAge(int age) {
         this.age = age;
@@ -28,6 +29,14 @@ public class WelcomeDto implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public Long getSleepTime() {
+        return sleepTime;
+    }
+
+    public void setSleepTime(Long sleepTime) {
+        this.sleepTime = sleepTime;
     }
 
     @Override
