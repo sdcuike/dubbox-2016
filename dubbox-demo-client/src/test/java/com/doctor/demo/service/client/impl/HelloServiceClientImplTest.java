@@ -26,47 +26,62 @@ import com.doctor.demo.service.HelloService;
 @ContextConfiguration("classpath:/demoClientConfig/spring-context.xml")
 public class HelloServiceClientImplTest {
 
-    @Resource(name = "helloServiceClient")
-    private HelloService helloService;
+	@Resource(name = "helloServiceClient")
+	private HelloService helloService;
 
-    @Test
-    public void testHello_para_WelcomeDto() throws InterruptedException {
-        int n = 21;
-        ExecutorService service = Executors.newFixedThreadPool(50);
+	@Test
+	public void testHello_para_WelcomeDto() throws InterruptedException {
+		int n = 11;
+		ExecutorService service = Executors.newFixedThreadPool(50);
 
-        for (int i = 0; i < n; i++) {
-            WelcomeDto welcomDto = new WelcomeDto();
-            welcomDto.setAge(i);
-            welcomDto.setName("doctor who");
-            welcomDto.setSleepTime(6L);
-            System.err.println("第" + i + "请求");
+		for (int i = 0; i < n; i++) {
+			final WelcomeDto welcomDto = new WelcomeDto();
+			welcomDto.setAge(i);
+			welcomDto.setName("doctor who");
+			welcomDto.setSleepTime(1L);
+			System.err.println("第" + i + "请求");
 
-            service.submit(() -> {
-                WelcomeResponseDto welcomeResponseDto = helloService.hello(welcomDto);
-                System.err.println(welcomeResponseDto);
-            });
+			service.submit(new Runnable() {
 
-        }
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub WelcomeResponseDto
+					WelcomeResponseDto welcomeResponseDto = helloService.hello(welcomDto);
+					System.err.println(welcomeResponseDto);
+				}
+			});
+		}
 
-        TimeUnit.HOURS.sleep(1);
-        service.shutdown();
-    }
+		TimeUnit.SECONDS.sleep(3);
 
-    @Ignore
-    @Test
-    public void testHello_para_string() {
-        WelcomeResponseDto welcomeResponseDto = helloService.hello("你好");
-        System.err.println(welcomeResponseDto);
-    }
+		final WelcomeDto welcomDto = new WelcomeDto();
+		welcomDto.setAge(111);
+		welcomDto.setName("doctor who");
+		welcomDto.setSleepTime(1L);
 
-    @Ignore
-    @Test
-    public void testHello_para_() {
-        WelcomeDto welcomeDto = new WelcomeDto();
-        welcomeDto.setAge(10088);
-        welcomeDto.setName("doctor who");
-        WelcomeResponseDto welcomeResponseDto = helloService.hello("rain", 888, welcomeDto);
-        System.err.println(welcomeResponseDto);
-    }
+		// TODO Auto-generated method stub WelcomeResponseDto
+		WelcomeResponseDto welcomeResponseDto = helloService.hello(welcomDto);
+		System.err.println(welcomeResponseDto);
+
+		TimeUnit.HOURS.sleep(1);
+		service.shutdown();
+	}
+
+	@Ignore
+	@Test
+	public void testHello_para_string() {
+		WelcomeResponseDto welcomeResponseDto = helloService.hello("你好");
+		System.err.println(welcomeResponseDto);
+	}
+
+	@Ignore
+	@Test
+	public void testHello_para_() {
+		WelcomeDto welcomeDto = new WelcomeDto();
+		welcomeDto.setAge(10088);
+		welcomeDto.setName("doctor who");
+		WelcomeResponseDto welcomeResponseDto = helloService.hello("rain", 888, welcomeDto);
+		System.err.println(welcomeResponseDto);
+	}
 
 }
